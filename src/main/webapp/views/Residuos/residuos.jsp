@@ -37,7 +37,7 @@
                     <%@include file="../topBar.jsp" %>
 
                     <!-- INICIO contenido de la pagina -->
-                    <h4>Hola Wilfredo!</h4>
+                    <h4>Hola Jheisson!</h4>
                     <!-- FIN contenido de la pagina -->
                 </div>
                 <!-- End of Main Content -->                
