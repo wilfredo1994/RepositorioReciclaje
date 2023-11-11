@@ -2,7 +2,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="UsuarioController?accion=listar">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="UsuarioController?accion=inicio">
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
@@ -14,7 +14,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="UsuarioController?accion=listar">
+        <a class="nav-link" href="UsuarioController?accion=inicio">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span></a>
     </li>
@@ -37,8 +37,8 @@
         <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Configuraciones:</h6>
-                <a class="collapse-item" href="views/Configuracion/configuracion.jsp">Cen. Acopio</a>
-                <a class="collapse-item" href="views/Configuracion/configuracion.jsp">Limites mensuales</a>
+                <a class="collapse-item" href="UsuarioController?accion=acopio">Cen. Acopio</a>
+                <a class="collapse-item" href="UsuarioController?accion=limite">Limites mensuales</a>
             </div>
         </div>
     </li>
@@ -54,12 +54,12 @@
              data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Ubigeo:</h6>
-                <a class="collapse-item" href="views/Administracion/administracion.jsp">Depatamentos</a>
-                <a class="collapse-item" href="views/Administracion/administracion.jsp">Distritos</a>
-                <a class="collapse-item" href="views/Administracion/administracion.jsp">Centros</a>                
+                <a class="collapse-item" href="UsuarioController?accion=departamento">Departamentos</a>
+                <a class="collapse-item" href="UsuarioController?accion=distrito">Distritos</a>
+                <a class="collapse-item" href="UsuarioController?accion=centro">Centros</a>                
                 <div class="collapse-divider"></div>
                 <h6 class="collapse-header">Usuarios:</h6>
-                <a class="collapse-item" href="views/Administracion/administracion.jsp">Usuario</a>
+                <a class="collapse-item" href="UsuarioController?accion=usuario">Usuario</a>
             </div>
         </div>
     </li>
@@ -82,8 +82,8 @@
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Residuos:</h6>                
-                <a class="collapse-item" href="UsuarioController?accion=registro">Registro</a>                
-                <a class="collapse-item" href="UsuarioController?accion=reportes">Reportes</a>                
+                <a class="collapse-item" href="UsuarioController?accion=registro1">Registro</a>                
+                <a class="collapse-item" href="UsuarioController?accion=reportes1">Reportes</a>                
             </div>
         </div>
     </li>
@@ -98,8 +98,8 @@
         <div id="collapseTables" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">Reciclaje:</h6>
-                <a class="collapse-item" href="views/Reciclaje/reciclaje.jsp">Registro</a>
-                <a class="collapse-item" href="views/Reciclaje/reciclaje.jsp">Reportes</a>                
+                <a class="collapse-item" href="UsuarioController?accion=registro2">Registro</a>
+                <a class="collapse-item" href="UsuarioController?accion=reportes2">Reportes</a>                
             </div>
         </div>
     </li>

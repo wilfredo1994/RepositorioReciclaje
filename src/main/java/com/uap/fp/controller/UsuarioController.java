@@ -30,11 +30,26 @@ public class UsuarioController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    //Configuraciones
+    String acopio = "views/Configuracion/configuracion.jsp";
+    String limite = "views/Configuracion/configuracion.jsp";
     
-    String listar="views/Dashboard/dashboard.jsp";
+    //Administracion
+    String departamento = "views/Administracion/administracion.jsp";
+    String distrito = "views/Administracion/administracion.jsp";
+    String centro = "views/Administracion/administracion.jsp";
+    String usuario = "views/Administracion/administracion.jsp";
+    
+    //Dashboard
     String dashboard="views/Dashboard/dashboard.jsp";
-    String registro="views/Residuos/residuos.jsp";
-    String reportes="views/Residuos/residuos.jsp";
+    
+    //Reciclaje
+    String registro1="views/Reciclaje/reciclaje.jsp";
+    String reportes1="views/Reciclaje/reciclaje.jsp";
+    
+    //Residuos
+    String registro2="views/Residuos/residuos.jsp";
+    String reportes2="views/Residuos/residuos.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
@@ -61,22 +76,44 @@ public class UsuarioController extends HttpServlet {
 //        }
         
         switch (action) {
-            case "listar":
-                acceso=listar;
-                break;        
-            case "registro":
-                acceso=registro;
+            case "departamento":
+                acceso=departamento;
+                break;
+            case "inicio":
+                acceso=dashboard;
+                break; 
+            case "distrito":
+            acceso=distrito;
+                break; 
+            case "centro":
+            acceso=centro;
+                break; 
+            case "usuario":
+            acceso=usuario;
+                break; 
+            case "acopio":
+                acceso=acopio;
+                break; 
+            case "limite":
+                acceso=limite;
+                break; 
+            case "registro1":
+                acceso=registro1;
                 break;      
-            case "reportes":
-                acceso=reportes;
+            case "reportes1":
+                acceso=reportes1;
+                break; 
+            case "registro2":
+                acceso=registro2;
+                break;      
+            case "reportes2":
+                acceso=reportes2;
                 break;      
             default:
                 throw new AssertionError();
         }
         
-        RequestDispatcher vista=request.getRequestDispatcher(acceso);
-        vista.forward(request, response);
-        
+        request.getRequestDispatcher(acceso).forward(request, response);              
     }
 
     /**
@@ -90,8 +127,8 @@ public class UsuarioController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
-        
+        //processRequest(request, response);
+        response.setContentType("text/html;charset=UTF-8");
         String accion = request.getParameter("accion");
         UsuarioDAO userdao = new UsuarioDAO();
         Usuario usr= new Usuario();
@@ -105,13 +142,12 @@ public class UsuarioController extends HttpServlet {
                     RequestDispatcher vista=request.getRequestDispatcher(dashboard);
                     vista.forward(request, response);
                 }else{
-                    RequestDispatcher vista=request.getRequestDispatcher("views/Index.jsp");
-                    vista.forward(request, response);
+                    response.sendRedirect("views/Index.jsp");                    
                 }                
                 break;                    
             default:
-                RequestDispatcher vista=request.getRequestDispatcher("views/Index.jsp");
-                vista.forward(request, response);
+                response.sendRedirect("views/Index.jsp");
+                
         }
     }
 
