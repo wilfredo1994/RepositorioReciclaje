@@ -197,4 +197,12 @@
         </div>
         <!-- End of Page Wrapper -->        
     </body>
+        
+    <script src="content/vendor/jquery/jquery.min.js"></script>
+    <script src="content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="content/vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="content/js/sb-admin-2.min.js"></script>    
+    <script src="content/vendor/chart.js/Chart.min.js"></script>    
+    <script src="content/js/demo/chart-area-demo.js"></script>
+    <script src="content/js/demo/chart-pie-demo.js"></script>
 </html>
