@@ -38,19 +38,20 @@
                                         <div class="text-center">
                                             <h1 class="h4 text-gray-900 mb-4">Bienvenido</h1>
                                         </div>
-                                        <form class="user">
-                                            <div class="form-group">
+                                        <form class="form-sign" action="../UsuarioController" method="POST">
+                                            <div class="form-group text-center">
                                                 <input type="email" class="form-control form-control-user"
-                                                       name="usuario" id="exampleInputEmail" aria-describedby="emailHelp"
+                                                       name="txtusuario" id="exampleInputEmail" aria-describedby="emailHelp"
                                                        placeholder="Usuario">
                                             </div>
                                             <div class="form-group">
                                                 <input type="password" class="form-control form-control-user"
-                                                       name="clave" id="exampleInputPassword" placeholder="Password">
+                                                       name="txtclave" id="exampleInputPassword" placeholder="Password">
                                             </div>                                        
-                                            <a href="../UsuarioController?accion=listar" class="btn btn-primary btn-user btn-block">
+                                            <!--<a href="../UsuarioController?accion=index" class="btn btn-primary btn-user btn-block">
                                                 Login
-                                            </a>                                        
+                                            </a>-->          
+                                            <input type="submit" name="accion" value="Ingresar" class="btn btn-primary btn-user btn-block">
                                         </form>                                   
                                     </div>
                                 </div>

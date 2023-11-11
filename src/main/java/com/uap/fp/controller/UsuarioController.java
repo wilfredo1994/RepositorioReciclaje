@@ -4,8 +4,11 @@
  */
 package com.uap.fp.controller;
 
+import com.uap.fp.model.Usuario;
+import com.uap.fp.modeldao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -29,23 +32,12 @@ public class UsuarioController extends HttpServlet {
      */
     
     String listar="views/Dashboard/dashboard.jsp";
+    String dashboard="views/Dashboard/dashboard.jsp";
     String registro="views/Residuos/residuos.jsp";
     String reportes="views/Residuos/residuos.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        /*response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-          
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UsuarioController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UsuarioController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }*/
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -99,6 +91,28 @@ public class UsuarioController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        
+        String accion = request.getParameter("accion");
+        UsuarioDAO userdao = new UsuarioDAO();
+        Usuario usr= new Usuario();
+        List<Usuario> lst = null;
+        switch (accion) {
+            case "Ingresar":
+                String usuario = request.getParameter("txtusuario");
+                String clave = request.getParameter("txtclave");         
+                usr = userdao.validar(usuario, clave);                
+                if(usr.getCorreo()!=null){
+                    RequestDispatcher vista=request.getRequestDispatcher(dashboard);
+                    vista.forward(request, response);
+                }else{
+                    RequestDispatcher vista=request.getRequestDispatcher("views/Index.jsp");
+                    vista.forward(request, response);
+                }                
+                break;                    
+            default:
+                RequestDispatcher vista=request.getRequestDispatcher("views/Index.jsp");
+                vista.forward(request, response);
+        }
     }
 
     /**

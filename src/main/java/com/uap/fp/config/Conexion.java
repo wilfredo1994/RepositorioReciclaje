@@ -57,8 +57,8 @@ public class Conexion {
 
                     // Paso 2: Establecer la conexión con Oracle local
                     String url = "jdbc:oracle:thin:@localhost:1521:xe";
-                    String usuario = "MATRICULA";
-                    String contraseña = "Banco2023";
+                    String usuario = "BDGESTION";
+                    String contraseña = "oracle123";
 
                     conexion = DriverManager.getConnection(url, usuario, contraseña);
 

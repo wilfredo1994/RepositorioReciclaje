@@ -28,7 +28,7 @@ public class UsuarioDAO implements UsuarioInterfaces {
     @Override
     public List listar() {
         ArrayList<Usuario> list=new ArrayList<>();
-        String sql="select ID_ALUMNO,NOMBRES,APELLIDOS from ALUMNO";
+        String sql="select * from usuario2";
         
         try {
             con = cn.establecerConexion();
@@ -37,9 +37,9 @@ public class UsuarioDAO implements UsuarioInterfaces {
             
             while(rs.next()){
                 Usuario usr=new Usuario();
-                usr.setId(rs.getInt("ID_ALUMNO"));
-                usr.setNombres(rs.getString("NOMBRES"));
-                usr.setApellidos(rs.getString("APELLIDOS"));
+                usr.setId(rs.getInt("ID"));
+                usr.setNombre(rs.getString("NOMBRE"));
+                usr.setCorreo(rs.getString("CORREO"));
                 list.add(usr);
             }
             
@@ -51,6 +51,31 @@ public class UsuarioDAO implements UsuarioInterfaces {
     @Override
     public Usuario list(int id) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public Usuario validar(String usuario, String clave) {
+        Usuario user=new Usuario();
+        String query= "select * from usuario where correo=? and clave=?";
+        //String query= "select * from usuario";
+        
+        try {
+            con = cn.establecerConexion();
+            ps = con.prepareStatement(query);
+            ps.setString(1, usuario);
+            ps.setString(2, clave);
+            rs = ps.executeQuery();
+            while(rs.next()){                
+                user.setId(rs.getInt("ID"));
+                user.setNombre(rs.getString("NOMBRE"));
+                user.setCorreo(rs.getString("CORREO"));                
+            }
+            
+            
+        } catch (Exception e) {
+        }
+        
+        return user;
     }
     
 }

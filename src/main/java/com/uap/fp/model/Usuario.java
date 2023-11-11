@@ -10,17 +10,19 @@ package com.uap.fp.model;
  */
 public class Usuario {
     int id;
-    String nombres;
-    String Apellidos;
+    String nombre;    
+    String correo;
+    String clave;
 
     public Usuario() {
     }    
-    
-    public Usuario(int id, String nombres, String Apellidos) {
+
+    public Usuario(int id, String nombre, String correo, String clave) {
         this.id = id;
-        this.nombres = nombres;
-        this.Apellidos = Apellidos;
-    }    
+        this.nombre = nombre;
+        this.correo = correo;
+        this.clave = clave;
+    }
 
     public int getId() {
         return id;
@@ -30,21 +32,30 @@ public class Usuario {
         this.id = id;
     }
 
-    public String getNombres() {
-        return nombres;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public String getApellidos() {
-        return Apellidos;
+    public String getCorreo() {
+        return correo;
     }
 
-    public void setApellidos(String Apellidos) {
-        this.Apellidos = Apellidos;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    
     
     
 }

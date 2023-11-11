@@ -14,4 +14,5 @@ import java.util.List;
 public interface UsuarioInterfaces {
     public List listar();
     public Usuario list(int id);
+    public Usuario validar(String usuario, String clave);
 }

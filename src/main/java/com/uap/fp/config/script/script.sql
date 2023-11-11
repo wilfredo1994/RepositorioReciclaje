@@ -357,5 +357,31 @@ GRANT DROP TABLESPACE TO "BDGESTION" ;
 GRANT ALTER ROLLBACK SEGMENT TO "BDGESTION" ;
 GRANT PURGE DBA_RECYCLEBIN TO "BDGESTION" ;
 
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+-- Crear secuencia
+CREATE SEQUENCE usuario_seq
+  START WITH 1
+  INCREMENT BY 1
+  NOMAXVALUE
+  NOCACHE
+  NOCYCLE;
+
+-- Crear la tabla de usuario
+CREATE TABLE usuario (
+  id NUMBER DEFAULT usuario_seq.NEXTVAL PRIMARY KEY,
+  nombre VARCHAR2(50),
+  correo VARCHAR2(100),
+  clave VARCHAR2(50)
+);
 
 
+INSERT INTO usuario (nombre, correo, clave)
+VALUES ('Wilfredo Valverde Huaman', 'wvalverdeh@gmail.com', '123456');
+
+COMMIT;
