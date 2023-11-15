@@ -77,11 +77,11 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
            aria-expanded="true" aria-controls="collapsePages">
             <i class="fas fa-fw fa-folder"></i>
-            <span>Residuos</span>
+            <span>Reciclaje</span>
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Residuos:</h6>                
+                <h6 class="collapse-header">Reciclaje:</h6>                
                 <a class="collapse-item" href="UsuarioController?accion=registro1">Registro</a>                
                 <a class="collapse-item" href="UsuarioController?accion=reportes1">Reportes</a>                
             </div>
@@ -93,11 +93,11 @@
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
            aria-expanded="true" aria-controls="collapseTables">
             <i class="fas fa-fw fa-table"></i>
-            <span>Reciclaje</span>
+            <span>Residuos</span>
         </a>
         <div id="collapseTables" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Reciclaje:</h6>
+                <h6 class="collapse-header">Residuos:</h6>
                 <a class="collapse-item" href="UsuarioController?accion=registro2">Registro</a>
                 <a class="collapse-item" href="UsuarioController?accion=reportes2">Reportes</a>                
             </div>
