@@ -45,11 +45,11 @@ public class UsuarioController extends HttpServlet {
     
     //Reciclaje
     String registro1="views/Reciclaje/reciclaje.jsp";
-    String reportes1="views/Reciclaje/reciclaje.jsp";
+    String reportes1="views/Reciclaje/reportes.jsp";
     
     //Residuos
     String registro2="views/Residuos/residuos.jsp";
-    String reportes2="views/Residuos/residuos.jsp";
+    String reportes2="views/Residuos/reportes.jsp";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
