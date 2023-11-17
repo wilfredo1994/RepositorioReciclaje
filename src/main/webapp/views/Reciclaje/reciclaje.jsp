@@ -36,252 +36,262 @@
 
                     <!-- INICIO contenido de la pagina -->
                     <div class="container-fluid">
-                        <h1 class="h3 mb-2 text-gray-800">Reciclaje</h1>
-                        
-                        <!-- Contenido del Registro del Formulario -->
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mt-4 mb-2">Registro</h1>
-                                    </div>
-                                    <form class="register-recycling border border-3 border-dark rounded bg-info p-4 mb-5">
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputRecyclingType">Tipo de Reciclaje:</label> 
-                                            <input type="text" class="form-control form-control-register-recycling" id="InputRecyclingType" placeholder="Cartón">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputAmount">Cantidad:</label> 
-                                            <input type="text" class="form-control form-control-register-recycling" id="InputAmount" placeholder="10">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputUnit">Unidad:</label> 
-                                            <input type="text" class="form-control form-control-register-recycling" id="InputUnit" placeholder="kg">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputCollectionCenter">Centro de Acopio:</label> 
-                                            <input type="text" class="form-control form-control-register-recycling" id="InputCollectionCenter" placeholder="Ciudad Saludable">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputPrice">Precio:</label> 
-                                            <input type="text" class="form-control form-control-register-recycling" id="InputPrice" placeholder="S/ 10.00">
-                                        </div>
-                                        <button type="button" class="btn btn-primary btn-register btn-block">Registrar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                                                 
-                        <!-- Contenido de mostrando tabla de registro -->
-                        <h1 class="h3 mb-2 text-gray-800">Mostrando Registro</h1>
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">Tipo de Reciclaje</th>
-                                                <th class="text-center">Cantidad</th>
-                                                <th class="text-center">Unidad</th>
-                                                <th class="text-center">Centro de Acopio</th>
-                                                <th class="text-center">Precio</th>
-                                                <th class="text-center">Editar</th>
-                                                <th class="text-center">Eliminar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">Papel</td>
-                                                <td class="text-center">4</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Eco Market Perú</td>
-                                                <td class="text-center">S/ 10.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                        <!-- Contenido del Registro del Formulario -->                      
+                        <div class="container-fluid">
+
+                        <h1 class="h3 mb-1 text-gray-800">Reciclaje - Registro</h1>
+                        <div class="card o-hidden border-0 shadow-lg my-2">
+                            <div class="card-body p-0">
+
+                                <div class="row">
+
+                                    <div class="col-lg-12">
+                                        <div class="p-3">
+                                            <form class="form" action="../UsuarioController" method="POST">
+                                                <div class="form-group row">
+                                                    <div class="col-sm-4">
+                                                        <label for="InputRecyclingType">Tipo de Reciclaje:</label>
+                                                        <input type="text" class="form-control" id="InputRecyclingType" placeholder="Cartón">                                                        
                                                     </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                    <div class="col-sm-4">
+                                                        <label for="InputAmount">Cantidad:</label>
+                                                        <input type="text" class="form-control" id="InputAmount" placeholder="10">
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Plástico</td>
-                                                <td class="text-center">3</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Recíclame, Ayuda a tu Planeta</td>
-                                                <td class="text-center">S/ 8.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                    <div class="col-sm-4">
+                                                        <label for="InputUnit">Unidad:</label>
+                                                        <input type="text" class="form-control" id="InputUnit" placeholder="kg">                                                    
+                                                    </div>                                                    
+                                                    <div class="col-sm-4">
+                                                        <label for="InputCollectionCenter">Centro de Acopio:</label>
+                                                        <input type="text" class="form-control" id="InputCollectionCenter" placeholder="Ciudad Saludable">                                                 
+                                                    </div>                                                 
+                                                    <div class="col-sm-4">
+                                                        <label for="InputPrice">Precio:</label>
+                                                        <input type="text" class="form-control" id="InputPrice" placeholder="S/ 10.00">                                                                                                                
                                                     </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Metales</td>
-                                                <td class="text-center">1</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Ciudad Saludable</td>
-                                                <td class="text-center">S/ 16.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Cartón</td>
-                                                <td class="text-center">7</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Recíclalo.pe</td>
-                                                <td class="text-center">S/ 15.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Vidrio</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Ecolegio</td>
-                                                <td class="text-center">S/ 6.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Materia orgánica</td>
-                                                <td class="text-center">6</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Ciudad Saludable</td>
-                                                <td class="text-center">S/ 10.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Plástico</td>
-                                                <td class="text-center">8</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Eco Market Perú</td>
-                                                <td class="text-center">S/ 12.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Vidrio</td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Ecolegio</td>
-                                                <td class="text-center">S/ 5.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Cartón</td>
-                                                <td class="text-center">9</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Recíclame, Ayuda a tu Planeta</td>
-                                                <td class="text-center">S/ 15.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Papel</td>
-                                                <td class="text-center">20</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Recíclalo.pe</td>
-                                                <td class="text-center">S/ 18.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Materia orgánica</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Eco Market Perú</td>
-                                                <td class="text-center">S/ 7.00</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                    <div class="col-sm-4">
+                                                        <label for="inputEmail3">Opciones</label>
+                                                        <div class="col-sm-1"></div>                                                        
+                                                        <input type="submit" name="accion" value="Registrar" class="btn btn-primary">                                                        
+                                                    </div>                                                    
+                                                </div>
+                                            </form>
+                                            <br>
+                                            <br>                                            
+                                            <div>
+                                                <div class="table-responsive">
+                                                    <table id="tblReciclaje" class="table table-hover">  
+                                                        <thead class="thead-dark">
+                                                            <tr>
+                                                                <th class="text-center">Tipo de Reciclaje</th>
+                                                                <th class="text-center">Cantidad</th>
+                                                                <th class="text-center">Unidad</th>
+                                                                <th class="text-center">Centro de Acopio</th>
+                                                                <th class="text-center">Precio</th>
+                                                                <th class="text-center">Editar</th>
+                                                                <th class="text-center">Eliminar</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="text-center">Papel</td>
+                                                                <td class="text-center">4</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Eco Market Perú</td>
+                                                                <td class="text-center">S/ 10.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Plástico</td>
+                                                                <td class="text-center">3</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Recíclame, Ayuda a tu Planeta</td>
+                                                                <td class="text-center">S/ 8.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Metales</td>
+                                                                <td class="text-center">1</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Ciudad Saludable</td>
+                                                                <td class="text-center">S/ 16.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Cartón</td>
+                                                                <td class="text-center">7</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Recíclalo.pe</td>
+                                                                <td class="text-center">S/ 15.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Vidrio</td>
+                                                                <td class="text-center">5</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Ecolegio</td>
+                                                                <td class="text-center">S/ 6.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Materia orgánica</td>
+                                                                <td class="text-center">6</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Ciudad Saludable</td>
+                                                                <td class="text-center">S/ 10.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Plástico</td>
+                                                                <td class="text-center">8</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Eco Market Perú</td>
+                                                                <td class="text-center">S/ 12.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Vidrio</td>
+                                                                <td class="text-center">2</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Ecolegio</td>
+                                                                <td class="text-center">S/ 5.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Cartón</td>
+                                                                <td class="text-center">9</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Recíclame, Ayuda a tu Planeta</td>
+                                                                <td class="text-center">S/ 15.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Papel</td>
+                                                                <td class="text-center">20</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Recíclalo.pe</td>
+                                                                <td class="text-center">S/ 18.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-center">Materia orgánica</td>
+                                                                <td class="text-center">5</td>
+                                                                <td class="text-center">kg</td>
+                                                                <td class="text-center">Eco Market Perú</td>
+                                                                <td class="text-center">S/ 7.00</td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <div class="sidebar-brand-icon text-center">
+                                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        </div>                                                                       
                     </div>
                     
                     <!-- Scroll to Top Button-->
@@ -294,7 +304,7 @@
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="    background: #60dbef;color: white;">
+                                <div class="modal-header bg-primary text-white">
                                     <h5 class="modal-title" id="exampleModalLabel">Editar Reciclaje</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
@@ -342,7 +352,7 @@
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="    background: #60dbef;color: white;">
+                                <div class="modal-header bg-primary text-white">
                                     <h5 class="modal-title" id="exampleModalLabel">Eliminar Reciclaje</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
