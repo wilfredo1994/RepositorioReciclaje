@@ -40,7 +40,62 @@
             <!-- Content Wrapper -->
             <div id="content-wrapper" class="d-flex flex-column">
                 <!-- Main Content -->
-                HOLA MUNDO REPORTES RECICLAJE
+                <div id="content">
+                    
+                    <!--INCLUIMOS LA BARRA TOP-->
+                    <%@include file="../topBar.jsp" %>
+
+                    <!-- INICIO contenido de la pagina -->
+                    <div class="container-fluid">
+                        
+                        <!-- Contenido del Reporte -->  
+                        <div class="container-fluid">
+                            <h1 class="h3 mb-1 text-gray-800">Reportes - Reciclajes</h1>
+                            <div class="card o-hidden border-0 shadow-lg my-2">
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="p-3">
+                                                <form>
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-3">
+                                                            <label for="inputEmail3">Tipo de Reciclaje</label>
+                                                            <div id="divDropComercios">
+                                                                <select id="cboEmpresa" class="form-control"></select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label for="inputEmail3">Fecha Inicio</label>
+                                                            <input type="date" id="dtpFechaIni" class="form-control">
+                                                        </div>
+                                                        <div class="col-sm-3">
+                                                            <label for="inputEmail3">Fecha Fin</label>
+                                                            <input type="date" id="dtpFechaFin" class="form-control">
+                                                        </div>
+
+                                                        <div class="col-sm-3">
+                                                            <label for="inputEmail3">Opciones</label>
+                                                            <div class="col-sm-1"></div>
+                                                            <input type="button" id="btnBuscar" value="Buscar" class="btn btn-primary" />
+                                                            <a type="button" href="#" id="btnExportar" class="btn btn-secondary">Export</a>
+                                                        </div>
+                                                    </div>
+                                                </form>
+
+                                                <div id="tblTransporte">
+                                                    <div class="table-responsive">
+                                                        <table id="tblEmpresas" class="table table-hover"></table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
                 <!-- End of Main Content -->                
                 <%@include file="../footer.jsp" %>
 

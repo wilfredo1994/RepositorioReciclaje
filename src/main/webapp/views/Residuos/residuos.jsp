@@ -47,252 +47,254 @@
 
                     <!-- INICIO contenido de la pagina -->
                     <div class="container-fluid">
-                        <h1 class="h3 mb-2 text-gray-800">Residuo</h1>
-                        
-                        <!-- Contenido del Registro del Formulario -->
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                                    <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mt-4 mb-2">Registro</h1>
-                                    </div>
-                                    <form class="register-residue border border-3 border-dark rounded bg-info p-4 mb-5">
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputResidue">Residuo:</label> 
-                                            <input type="text" class="form-control form-control-register-residue" id="InputResidue" placeholder="Líquido">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputGeneratingProcess">Proceso Generador:</label> 
-                                            <input type="text" class="form-control form-control-register-residue" id="InputGeneratingProcess" placeholder="Productos químicos">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputAmount">Cantidad:</label> 
-                                            <input type="text" class="form-control form-control-register-residue" id="InputAmount" placeholder="10">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputUnit">Unidad:</label> 
-                                            <input type="text" class="form-control form-control-register-residue" id="InputUnit" placeholder="kg">
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-form-label text-gray-900" for="InputCollectionCenter">Centro de Acopio:</label> 
-                                            <input type="text" class="form-control form-control-register-residue" id="InputCollectionCenter" placeholder="Resiter Perú">
-                                        </div>
-                                        <button type="button" class="btn btn-primary btn-register btn-block">Registrar</button>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
                                                 
-                        <!-- Contenido de mostrando tabla de registro -->
-                        <h1 class="h3 mb-2 text-gray-800">Mostrando Registro</h1>
-                        <div class="card shadow mb-4">
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th class="text-center">Residuo</th>
-                                                <th class="text-center">Proceso Generador</th>
-                                                <th class="text-center">Cantidad</th>
-                                                <th class="text-center">Unidad</th>
-                                                <th class="text-center">Centro de Acopio</th>
-                                                <th class="text-center">Editar</th>
-                                                <th class="text-center">Eliminar</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td class="text-center">Orgánico</td>
-                                                <td class="text-center">Residuos de cocina</td>
-                                                <td class="text-center">1</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Donde Reciclar</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                        <!-- Contenido del Registro del Formulario -->                      
+                        <div class="container-fluid">
+                            <h1 class="h3 mb-1 text-gray-800">Residuo - Registro</h1>
+                            <div class="card o-hidden border-0 shadow-lg my-2">
+                                <div class="card-body p-0">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="p-3">
+                                                <form class="form" action="../UsuarioController" method="POST">
+                                                    <div class="form-group row">
+                                                        <div class="col-sm-4">
+                                                            <label for="InputGeneratingProcess">Proceso Generador:</label>
+                                                            <input type="text" class="form-control" id="InputGeneratingProcess" placeholder="Productos químicos">                                                        
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label for="InputAmount">Cantidad:</label>
+                                                            <input type="text" class="form-control" id="InputAmount" placeholder="10">
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label for="InputUnit">Unidad:</label>
+                                                            <input type="text" class="form-control" id="InputUnit" placeholder="kg">                                                    
+                                                        </div>                                                    
+                                                        <div class="col-sm-4">
+                                                            <label for="InputCollectionCenter">Centro de Acopio:</label>
+                                                            <input type="text" class="form-control" id="InputCollectionCenter" placeholder="Resiter Perú">                                                 
+                                                        </div>   
+                                                        <div class="col-sm-4">
+                                                            <label for="inputEmail3">Opciones</label>
+                                                            <div class="col-sm-1"></div>                                                        
+                                                            <input type="submit" name="accion" value="Registrar" class="btn btn-primary">                                                        
+                                                        </div>                                                    
                                                     </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                </form>
+                                                <br>
+                                                <br>                                            
+                                                <div>
+                                                    <div class="table-responsive">
+                                                        <table id="tblReciclaje" class="table table-hover">  
+                                                            <thead class="thead bg-primary">
+                                                                <tr>
+                                                                    <th class="text-center text-white">Residuo</th>
+                                                                    <th class="text-center text-white">Proceso Generador</th>
+                                                                    <th class="text-center text-white">Cantidad</th>
+                                                                    <th class="text-center text-white">Unidad</th>
+                                                                    <th class="text-center text-white">Centro de Acopio</th>
+                                                                    <th class="text-center text-white">Editar</th>
+                                                                    <th class="text-center text-white">Eliminar</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr>
+                                                                    <td class="text-center">Orgánico</td>
+                                                                    <td class="text-center">Residuos de cocina</td>
+                                                                    <td class="text-center">1</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Donde Reciclar</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Líquido</td>
+                                                                    <td class="text-center">Productos químicos</td>
+                                                                    <td class="text-center">8</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Resiter Perú</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Líquido</td>
+                                                                    <td class="text-center">Líquidos contaminados</td>
+                                                                    <td class="text-center">10</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Real Plaza</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Peligroso</td>
+                                                                    <td class="text-center">Medicamentos vencidos</td>
+                                                                    <td class="text-center">4</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Portal Recicla Lima</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Orgánico</td>
+                                                                    <td class="text-center">Residuos de jardín</td>
+                                                                    <td class="text-center">5</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">EcoCentury</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Peligroso</td>
+                                                                    <td class="text-center">Pilas y baterías</td>
+                                                                    <td class="text-center">2</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Resiter Perú</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Sólido</td>
+                                                                    <td class="text-center">Envoltorios de alimentos</td>
+                                                                    <td class="text-center">9</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Portal Recicla Lima</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Orgánico</td>
+                                                                    <td class="text-center">Restos de comida</td>
+                                                                    <td class="text-center">15</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Real Plaza</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Sólido</td>
+                                                                    <td class="text-center">Envases de vidrio</td>
+                                                                    <td class="text-center">5</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Donde Reciclar</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Líquido</td>
+                                                                    <td class="text-center">Aguas residuales domésticas</td>
+                                                                    <td class="text-center">10</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">EcoCentury</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <td class="text-center">Sólido</td>
+                                                                    <td class="text-center">Latas de Aluminio</td>
+                                                                    <td class="text-center">10</td>
+                                                                    <td class="text-center">kg</td>
+                                                                    <td class="text-center">Resiter Perú</td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                    <td>
+                                                                        <div class="sidebar-brand-icon text-center">
+                                                                            <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
+                                                                        </div>
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
                                                     </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Líquido</td>
-                                                <td class="text-center">Productos químicos</td>
-                                                <td class="text-center">8</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Resiter Perú</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Líquido</td>
-                                                <td class="text-center">Líquidos contaminados</td>
-                                                <td class="text-center">10</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Real Plaza</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Peligroso</td>
-                                                <td class="text-center">Medicamentos vencidos</td>
-                                                <td class="text-center">4</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Portal Recicla Lima</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Orgánico</td>
-                                                <td class="text-center">Residuos de jardín</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">EcoCentury</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Peligroso</td>
-                                                <td class="text-center">Pilas y baterías</td>
-                                                <td class="text-center">2</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Resiter Perú</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Sólido</td>
-                                                <td class="text-center">Envoltorios de alimentos</td>
-                                                <td class="text-center">9</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Portal Recicla Lima</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Orgánico</td>
-                                                <td class="text-center">Restos de comida</td>
-                                                <td class="text-center">15</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Real Plaza</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Sólido</td>
-                                                <td class="text-center">Envases de vidrio</td>
-                                                <td class="text-center">5</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Donde Reciclar</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Líquido</td>
-                                                <td class="text-center">Aguas residuales domésticas</td>
-                                                <td class="text-center">10</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">EcoCentury</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td class="text-center">Sólido</td>
-                                                <td class="text-center">Latas de Aluminio</td>
-                                                <td class="text-center">10</td>
-                                                <td class="text-center">kg</td>
-                                                <td class="text-center">Resiter Perú</td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#editModal"><i class="fas fa-pen" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    <div class="sidebar-brand-icon text-center">
-                                                        <a data-toggle="modal" data-target="#trashModal"><i class="fas fa-trash" style="color: #606062;"></i></a>
-                                                    </div>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>                                                                       
                     </div>
                     
                     <!-- Scroll to Top Button-->
@@ -300,12 +302,12 @@
                         <i class="fas fa-angle-up"></i>
                     </a>
                     
-                    <!-- Editar Residuo Registrado Modal-->
+                    <!-- Editar Reciclaje Registrado Modal-->
                     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="    background: #60dbef;color: white;">
+                                <div class="modal-header bg-primary text-white">
                                     <h5 class="modal-title" id="exampleModalLabel">Editar Residuo</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
@@ -353,7 +355,7 @@
                         aria-hidden="true">
                         <div class="modal-dialog" role="document">
                             <div class="modal-content">
-                                <div class="modal-header" style="    background: #60dbef;color: white;">
+                                <div class="modal-header bg-primary text-white">
                                     <h5 class="modal-title" id="exampleModalLabel">Eliminar Residuo</h5>
                                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">×</span>
@@ -368,7 +370,7 @@
                             </div>
                         </div>
                     </div>
-                    
+                      
                     <!-- FIN contenido de la pagina -->
                 </div>
                 <!-- End of Main Content -->                
