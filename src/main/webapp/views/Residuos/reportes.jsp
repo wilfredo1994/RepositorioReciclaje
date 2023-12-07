@@ -59,10 +59,15 @@
                                                 <form>
                                                     <div class="form-group row">
                                                         <div class="col-sm-3">
-                                                            <label for="inputEmail3">Centro de Acopio</label>
-                                                            <div id="divDropComercios">
-                                                                <select id="cboEmpresa" class="form-control"></select>
-                                                            </div>
+                                                            <label for="InputCollectionCenter">Centro de Acopio</label>
+                                                            <select class="form-control" id="InputCollectionCenter" name="InputCollectionCenter">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Donde Reciclar</option>
+                                                                <option value="2">Resiter Perú</option>
+                                                                <option value="3">Real Plaza</option>
+                                                                <option value="4">Portal Recicla Lima</option>
+                                                                <option value="5">EcoCentury</option>                                                                
+                                                            </select>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <label for="inputEmail3">Fecha Inicio</label>

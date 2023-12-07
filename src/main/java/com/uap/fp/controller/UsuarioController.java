@@ -135,15 +135,15 @@ public class UsuarioController extends HttpServlet {
         List<Usuario> lst = null;
         switch (accion) {
             case "Ingresar":
-//                String usuario = request.getParameter("txtusuario");
-//                String clave = request.getParameter("txtclave");         
-//                usr = userdao.validar(usuario, clave);                
-//                if(usr.getCorreo()!=null){
+                String clave = request.getParameter("txtclave");         
+                String usuario = request.getParameter("txtusuario");
+                usr = userdao.validar(usuario, clave);                
+                if(usr.getCorreo()!=null){                
                     RequestDispatcher vista=request.getRequestDispatcher(dashboard);
                     vista.forward(request, response);
-//                }else{
-//                    response.sendRedirect("views/Index.jsp");                    
-//                }                
+                }else{
+                    response.sendRedirect("views/Index.jsp");                    
+                }                
                 break;                    
             default:
                 response.sendRedirect("views/Index.jsp");

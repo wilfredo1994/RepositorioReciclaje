@@ -57,10 +57,34 @@
                                         <div class="col-lg-12">
                                             <div class="p-3">
                                                 <form class="form" action="../UsuarioController" method="POST">
-                                                    <div class="form-group row">
+                                                    <div class="form-group row">                                                        
                                                         <div class="col-sm-4">
                                                             <label for="InputGeneratingProcess">Proceso Generador:</label>
-                                                            <input type="text" class="form-control" id="InputGeneratingProcess" placeholder="Productos químicos">                                                        
+                                                            <select class="form-control" id="InputGeneratingProcess" name="InputGeneratingProcess">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Residuos de cocina</option>
+                                                                <option value="2">Productos químicos</option>
+                                                                <option value="3">Líquidos contaminados</option>
+                                                                <option value="4">Medicamentos vencidos</option>
+                                                                <option value="5">Residuos de jardín</option>
+                                                                <option value="6">Pilas y baterías</option>
+                                                                <option value="7">Envoltorios de alimentos</option>
+                                                                <option value="8">Restos de comida</option>
+                                                                <option value="9">Envases de vidrio</option>
+                                                                <option value="10">Aguas residuales domésticas</option>
+                                                                <option value="11">Latas de aluminio</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="col-sm-4">
+                                                            <label for="InputGeneratingProcess">Residuo:</label>
+                                                            <select class="form-control" id="InputGeneratingProcess" name="InputGeneratingProcess">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Orgánico</option>
+                                                                <option value="2">Líquido</option>
+                                                                <option value="3">Peligroso</option>
+                                                                <option value="4">Sólido</option>
+                                                                <option value="5">Residuos de Construcción y Demolición</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <label for="InputAmount">Cantidad:</label>
@@ -68,11 +92,23 @@
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <label for="InputUnit">Unidad:</label>
-                                                            <input type="text" class="form-control" id="InputUnit" placeholder="kg">                                                    
+                                                            <select class="form-control" id="InputUnit" name="InputUnit">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Kilogramo (kg)</option>
+                                                                <option value="2">Gramos (g)</option>
+                                                                <option value="3">Toneladas (t)</option>
+                                                            </select>
                                                         </div>                                                    
                                                         <div class="col-sm-4">
                                                             <label for="InputCollectionCenter">Centro de Acopio:</label>
-                                                            <input type="text" class="form-control" id="InputCollectionCenter" placeholder="Resiter Perú">                                                 
+                                                            <select class="form-control" id="InputCollectionCenter" name="InputCollectionCenter">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Donde Reciclar</option>
+                                                                <option value="2">Resiter Perú</option>
+                                                                <option value="3">Real Plaza</option>
+                                                                <option value="4">Portal Recicla Lima</option>
+                                                                <option value="5">EcoCentury</option>                                                                
+                                                            </select>
                                                         </div>   
                                                         <div class="col-sm-4">
                                                             <label for="inputEmail3">Opciones</label>

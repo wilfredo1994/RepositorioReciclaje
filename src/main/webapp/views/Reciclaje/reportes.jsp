@@ -59,10 +59,16 @@
                                                 <form>
                                                     <div class="form-group row">
                                                         <div class="col-sm-3">
-                                                            <label for="inputEmail3">Tipo de Reciclaje</label>
-                                                            <div id="divDropComercios">
-                                                                <select id="cboEmpresa" class="form-control"></select>
-                                                            </div>
+                                                            <label for="InputRecyclingType">Tipo de Reciclaje</label>                                                           
+                                                            <select class="form-control" id="InputRecyclingType" name="InputRecyclingType">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Cartón</option>
+                                                                <option value="2">Papel</option>
+                                                                <option value="3">Vidrio</option>
+                                                                <option value="4">Lata</option>
+                                                                <option value="5">Plástico</option>
+                                                                <option value="6">Materia orgánica</option>
+                                                            </select>
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <label for="inputEmail3">Fecha Inicio</label>

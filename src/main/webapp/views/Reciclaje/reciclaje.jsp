@@ -48,20 +48,40 @@
                                                 <form class="form" action="../UsuarioController" method="POST">
                                                     <div class="form-group row">
                                                         <div class="col-sm-4">
-                                                            <label for="InputRecyclingType">Tipo de Reciclaje:</label>
-                                                            <input type="text" class="form-control" id="InputRecyclingType" placeholder="Cartón">                                                        
+                                                            <label for="InputRecyclingType">Tipo de Reciclaje:</label>                                                            
+                                                            <select class="form-control" id="InputRecyclingType" name="InputRecyclingType">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Cartón</option>
+                                                                <option value="2">Papel</option>
+                                                                <option value="3">Vidrio</option>
+                                                                <option value="4">Lata</option>
+                                                                <option value="5">Plástico</option>
+                                                                <option value="6">Materia orgánica</option>                                                                	
+                                                            </select>
                                                         </div>
                                                         <div class="col-sm-4">
                                                             <label for="InputAmount">Cantidad:</label>
                                                             <input type="text" class="form-control" id="InputAmount" placeholder="10">
                                                         </div>
-                                                        <div class="col-sm-4">
+                                                        <div class="col-sm-4">                                                                                                                                                                          
                                                             <label for="InputUnit">Unidad:</label>
-                                                            <input type="text" class="form-control" id="InputUnit" placeholder="kg">                                                    
+                                                            <select class="form-control" id="InputUnit" name="InputUnit">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Kilogramo (kg)</option>
+                                                                <option value="2">Gramos (g)</option>
+                                                                <option value="3">Toneladas (t)</option>
+                                                            </select>
                                                         </div>                                                    
                                                         <div class="col-sm-4">
                                                             <label for="InputCollectionCenter">Centro de Acopio:</label>
-                                                            <input type="text" class="form-control" id="InputCollectionCenter" placeholder="Ciudad Saludable">                                                 
+                                                            <select class="form-control" id="InputCollectionCenter" name="InputCollectionCenter">
+                                                                <option value="0">Seleccionar</option>
+                                                                <option value="1">Donde Reciclar</option>
+                                                                <option value="2">Resiter Perú</option>
+                                                                <option value="3">Real Plaza</option>
+                                                                <option value="4">Portal Recicla Lima</option>
+                                                                <option value="5">EcoCentury</option>                                                                
+                                                            </select>
                                                         </div>                                                 
                                                         <div class="col-sm-4">
                                                             <label for="InputPrice">Precio:</label>

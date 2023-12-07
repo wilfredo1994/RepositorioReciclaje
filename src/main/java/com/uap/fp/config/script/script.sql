@@ -383,5 +383,35 @@ CREATE TABLE usuario (
 
 INSERT INTO usuario (nombre, correo, clave)
 VALUES ('Wilfredo Valverde Huaman', 'wvalverdeh@gmail.com', '123456');
+INSERT INTO usuario (nombre, correo, clave)
+VALUES ('Jheisson Villafuerte Sullon', 'jvillafuertes@gmail.com', '123456');
+INSERT INTO usuario (nombre, correo, clave)
+VALUES ('Ana Soto Zea', 'asotoz@gmail.com', '123456');
+INSERT INTO usuario (nombre, correo, clave)
+VALUES ('Georg Balcazar Rivera', 'gbalcazarr@gmail.com', '123456');
 
 COMMIT;
+
+
+
+CREATE TABLE reciclaje (
+    id_reciclaje NUMBER GENERATED ALWAYS AS IDENTITY START WITH 1 INCREMENT BY 1,
+    tipo_reciclaje VARCHAR2(255) NOT NULL,
+    centro_acopio VARCHAR2(255) NOT NULL,
+    cantidad NUMBER NOT NULL,
+    precio NUMBER(10,2) NOT NULL,
+    unidad VARCHAR2(50) NOT NULL,
+    CONSTRAINT reciclaje_pk PRIMARY KEY (id_reciclaje)
+);
+
+
+
+CREATE TABLE residuo (
+    id_residuo NUMBER GENERATED ALWAYS AS IDENTITY START WITH 1 INCREMENT BY 1,
+    proceso_generador VARCHAR2(255) NOT NULL,
+    residuo VARCHAR2(255) NOT NULL,
+    cantidad NUMBER NOT NULL,
+    centro_acopio VARCHAR2(255) NOT NULL,
+    unidad VARCHAR2(50) NOT NULL,
+    CONSTRAINT residuo_pk PRIMARY KEY (id_residuo)
+);
