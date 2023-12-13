@@ -11,24 +11,83 @@ package com.uap.fp.model;
 public class Reciclaje {
     
     private int idReciclaje;
+    private int idTipo;
     private String tipoReciclaje;
+    private int idAcopio;    
     private String centroAcopio;
-    private int cantidad;
+    private int cantidad;    
     private double precio;
+    private int idUnidad;
     private String unidad;
+    private String fecha;
+    private int estado;
+    private String descEstado;
 
-    public Reciclaje(int idReciclaje, String tipoReciclaje, String centroAcopio, int cantidad, double precio, String unidad) {
+    public Reciclaje(int idReciclaje, int idTipo, String tipoReciclaje, int idAcopio, String centroAcopio, int cantidad, double precio, int idUnidad, String unidad, String fecha, int estado, String descEstado) {
         this.idReciclaje = idReciclaje;
+        this.idTipo = idTipo;
         this.tipoReciclaje = tipoReciclaje;
+        this.idAcopio = idAcopio;
         this.centroAcopio = centroAcopio;
         this.cantidad = cantidad;
         this.precio = precio;
+        this.idUnidad = idUnidad;
         this.unidad = unidad;
+        this.fecha = fecha;
+        this.estado = estado;
+        this.descEstado = descEstado;
     }
+
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public String getDescEstado() {
+        return descEstado;
+    }
+
+    public void setDescEstado(String descEstado) {
+        this.descEstado = descEstado;
+    }
+
+
+    
+
+    
 
     public Reciclaje() {
     }
 
+    public int getIdTipo() {
+        return idTipo;
+    }
+
+    public void setIdTipo(int idTipo) {
+        this.idTipo = idTipo;
+    }
+
+    public int getIdAcopio() {
+        return idAcopio;
+    }
+
+    public void setIdAcopio(int idAcopio) {
+        this.idAcopio = idAcopio;
+    }
+
+    public int getIdUnidad() {
+        return idUnidad;
+    }
+
+    public void setIdUnidad(int idUnidad) {
+        this.idUnidad = idUnidad;
+    }
+
+    
+    
     public int getIdReciclaje() {
         return idReciclaje;
     }
@@ -77,6 +136,14 @@ public class Reciclaje {
         this.unidad = unidad;
     }
     
+        public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+
     
     
 }

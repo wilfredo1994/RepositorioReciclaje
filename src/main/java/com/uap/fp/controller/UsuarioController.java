@@ -4,13 +4,18 @@
  */
 package com.uap.fp.controller;
 
+import com.uap.fp.model.Reciclaje;
+import com.uap.fp.model.TipoReciclaje;
 import com.uap.fp.model.Usuario;
+import com.uap.fp.modeldao.ReciclajeDAO;
 import com.uap.fp.modeldao.UsuarioDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,6 +24,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author PC
  */
+@WebServlet(name = "UsuarioController", urlPatterns = {"/UsuarioController"})
 public class UsuarioController extends HttpServlet {
 
     /**
@@ -64,6 +70,59 @@ public class UsuarioController extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
+    
+    private String construirJSON(List<TipoReciclaje> listaDatos) {
+        // Construir el JSON con los datos obtenidos
+        // Implementa tu lógica específica aquí
+        // Puedes usar una biblioteca como Gson para simplificar la creación del JSON
+        // Aquí se muestra un ejemplo básico sin bibliotecas adicionales
+
+        StringBuilder jsonBuilder = new StringBuilder();
+        jsonBuilder.append("{");
+        jsonBuilder.append("\"labels\": [");
+
+        for (int i = 0; i < listaDatos.size(); i++) {
+            jsonBuilder.append("\"").append(listaDatos.get(i).getNombre()).append("\"");
+            if (i < listaDatos.size() - 1) {
+                jsonBuilder.append(",");
+            }
+        }
+
+        jsonBuilder.append("],");
+        jsonBuilder.append("\"datasets\": [{");
+        jsonBuilder.append("\"data\": [");
+
+        for (int i = 0; i < listaDatos.size(); i++) {
+            jsonBuilder.append(listaDatos.get(i).getCantidad());
+            if (i < listaDatos.size() - 1) {
+                jsonBuilder.append(",");
+            }
+        }
+
+        jsonBuilder.append("],");
+        jsonBuilder.append("\"backgroundColor\": [\"#4e73df\", \"#1cc88a\", \"#36b9cc\"],");
+        jsonBuilder.append("\"hoverBackgroundColor:\": [\"#2e59d9\", \"#17a673\", \"#2c9faf\"],");
+        jsonBuilder.append("\"hoverBorderColor:\": \"rgba(234, 236, 244, 1)\"");
+        jsonBuilder.append("}]");
+        jsonBuilder.append("}");
+
+        return jsonBuilder.toString();
+    }
+    
+    private List<TipoReciclaje> obtenerDatosDesdeModelo() {
+        
+        
+        // Crear una lista de personas
+        List<TipoReciclaje> recicla = new ArrayList<>();
+
+        // Llenar la lista con datos dummy
+        recicla.add(new TipoReciclaje(1,"Plastico", 500));
+        recicla.add(new TipoReciclaje(2,"Papel", 250));
+        recicla.add(new TipoReciclaje(3,"Vidrio", 120));
+        
+        return recicla;
+    }
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -78,6 +137,22 @@ public class UsuarioController extends HttpServlet {
         switch (action) {
             case "departamento":
                 acceso=departamento;
+                break;
+            case "pye":
+                List<TipoReciclaje> listaDatos = obtenerDatosDesdeModelo();
+
+                // Construir el JSON con los datos
+                String json = construirJSON(listaDatos);
+
+                // Configurar la respuesta
+                response.setContentType("application/json");
+                response.setCharacterEncoding("UTF-8");
+
+                // Enviar el JSON como respuesta
+                PrintWriter out = response.getWriter();
+                out.print(json);
+                out.flush();
+                out.close();
                 break;
             case "inicio":
                 acceso=dashboard;
@@ -98,9 +173,15 @@ public class UsuarioController extends HttpServlet {
                 acceso=limite;
                 break; 
             case "registro1":
+                ReciclajeDAO recdao=new ReciclajeDAO();                
+                List<Reciclaje> listaRec = recdao.listar();
+                request.setAttribute("datosLista", listaRec);
                 acceso=registro1;
                 break;      
             case "reportes1":
+                ReciclajeDAO recdaor=new ReciclajeDAO();                
+                List<Reciclaje> listaRecr = recdaor.listarReporte();
+                request.setAttribute("datosLista", listaRecr);                
                 acceso=reportes1;
                 break; 
             case "registro2":

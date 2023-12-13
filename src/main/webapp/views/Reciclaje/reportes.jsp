@@ -3,8 +3,9 @@
     Created on : 7 nov. 2023, 14:28:49
     Author     : Jheisson
 --%>
-
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="com.uap.fp.model.Reciclaje" %>
 <!DOCTYPE html>
 <html>    
     <!--<head>
@@ -56,12 +57,12 @@
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="p-3">
-                                                <form>
+                                                <form class="form" action="ReciclajeController" method="POST">
                                                     <div class="form-group row">
                                                         <div class="col-sm-3">
                                                             <label for="InputRecyclingType">Tipo de Reciclaje</label>                                                           
                                                             <select class="form-control" id="InputRecyclingType" name="InputRecyclingType">
-                                                                <option value="0">Seleccionar</option>
+                                                                <option value="0">Todos</option>
                                                                 <option value="1">Cartón</option>
                                                                 <option value="2">Papel</option>
                                                                 <option value="3">Vidrio</option>
@@ -72,25 +73,55 @@
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <label for="inputEmail3">Fecha Inicio</label>
-                                                            <input type="date" id="dtpFechaIni" class="form-control">
+                                                            <input type="date" id="dtpFechaIni" name="dtpFechaIni" class="form-control">
                                                         </div>
                                                         <div class="col-sm-3">
                                                             <label for="inputEmail3">Fecha Fin</label>
-                                                            <input type="date" id="dtpFechaFin" class="form-control">
+                                                            <input type="date" id="dtpFechaFin" name="dtpFechaFin" class="form-control">
                                                         </div>
 
                                                         <div class="col-sm-3">
                                                             <label for="inputEmail3">Opciones</label>
                                                             <div class="col-sm-1"></div>
-                                                            <input type="button" id="btnBuscar" value="Buscar" class="btn btn-primary" />
-                                                            <a type="button" href="#" id="btnExportar" class="btn btn-secondary">Export</a>
+                                                            <input type="submit" name="accion" value="Buscar" class="btn btn-primary" />                                                            
+                                                            <input type="submit" name="accion" value="Exportar" class="btn btn-primary" />                                                            
                                                         </div>
                                                     </div>
                                                 </form>
 
                                                 <div id="tblTransporte">
                                                     <div class="table-responsive">
-                                                        <table id="tblEmpresas" class="table table-hover"></table>
+                                                        <table id="tblReciclaje" class="table table-hover">  
+                                                            <thead class="thead bg-primary">
+                                                                <tr>
+                                                                    <th class="text-center text-white">Tipo de Reciclaje</th>
+                                                                    <th class="text-center text-white">Cantidad</th>
+                                                                    <th class="text-center text-white">Unidad</th>
+                                                                    <th class="text-center text-white">Centro de Acopio</th>
+                                                                    <th class="text-center text-white">Precio</th>
+                                                                    <th class="text-center text-white">Fecha Registro</th>
+                                                                    <th class="text-center text-white">Estado</th>                                                                    
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                
+                                                                <% List<Reciclaje> listaDatos = (List<Reciclaje>) request.getAttribute("datosLista");
+                                                                    for (Reciclaje dato : listaDatos) { %>                                                                    
+                                                                     
+                                                                     <tr>
+                                                                        <td class="text-center"><%= dato.getTipoReciclaje() %></td>
+                                                                        <td class="text-center"><%= dato.getCantidad() %></td>
+                                                                        <td class="text-center"><%= dato.getUnidad() %></td>
+                                                                        <td class="text-center"><%= dato.getCentroAcopio() %></td>
+                                                                        <td class="text-center">S/ <%= dato.getPrecio() %></td>
+                                                                        <td class="text-center"><%= dato.getFecha()%></td>
+                                                                        <!--<td class="text-center">12/12/23</td>-->
+                                                                        <td class="text-center"><%= dato.getDescEstado()%></td>
+                                                                    </tr>
+                                                                    
+                                                                 <% } %>                                                                                                                               
+                                                            </tbody>
+                                                        </table>
                                                     </div>
                                                 </div>
                                             </div>

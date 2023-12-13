@@ -16,16 +16,19 @@ public class Residuo {
     private int cantidad;
     private String centroAcopio;
     private String unidad;
+    private int estado;
 
-    public Residuo(int idResiduo, String procesoGenerador, String tipoResiduo, int cantidad, String centroAcopio, String unidad) {
+    public Residuo(int idResiduo, String procesoGenerador, String tipoResiduo, int cantidad, String centroAcopio, String unidad, int estado) {
         this.idResiduo = idResiduo;
         this.procesoGenerador = procesoGenerador;
         this.tipoResiduo = tipoResiduo;
         this.cantidad = cantidad;
         this.centroAcopio = centroAcopio;
         this.unidad = unidad;
+        this.estado = estado;
     }
 
+   
     public Residuo() {
     }
 
@@ -76,6 +79,15 @@ public class Residuo {
     public void setUnidad(String unidad) {
         this.unidad = unidad;
     }
+
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
     
     
 }

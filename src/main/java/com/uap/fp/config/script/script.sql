@@ -392,8 +392,6 @@ VALUES ('Georg Balcazar Rivera', 'gbalcazarr@gmail.com', '123456');
 
 COMMIT;
 
-
-
 CREATE TABLE reciclaje (
     id_reciclaje NUMBER GENERATED ALWAYS AS IDENTITY START WITH 1 INCREMENT BY 1,
     tipo_reciclaje VARCHAR2(255) NOT NULL,
@@ -401,10 +399,25 @@ CREATE TABLE reciclaje (
     cantidad NUMBER NOT NULL,
     precio NUMBER(10,2) NOT NULL,
     unidad VARCHAR2(50) NOT NULL,
+    estado char(1) default 1,
+    fecha_registro date default sysdate,
     CONSTRAINT reciclaje_pk PRIMARY KEY (id_reciclaje)
 );
 
+insert into reciclaje 
+(tipo_reciclaje,centro_acopio,cantidad,precio,unidad)
+values(1,1,4,10.2,1);
+insert into reciclaje 
+(tipo_reciclaje,centro_acopio,cantidad,precio,unidad)
+values(2,1,3,8,1);
+insert into reciclaje 
+(tipo_reciclaje,centro_acopio,cantidad,precio,unidad)
+values(1,2,12,15,1);
+insert into reciclaje 
+(tipo_reciclaje,centro_acopio,cantidad,precio,unidad)
+values(2,2,10,9,1);
 
+commit;
 
 CREATE TABLE residuo (
     id_residuo NUMBER GENERATED ALWAYS AS IDENTITY START WITH 1 INCREMENT BY 1,
@@ -413,5 +426,8 @@ CREATE TABLE residuo (
     cantidad NUMBER NOT NULL,
     centro_acopio VARCHAR2(255) NOT NULL,
     unidad VARCHAR2(50) NOT NULL,
+    estado char(1) default 1,
+    fecha_registro date default sysdate,
     CONSTRAINT residuo_pk PRIMARY KEY (id_residuo)
 );
+
