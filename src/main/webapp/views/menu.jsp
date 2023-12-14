@@ -6,7 +6,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">GESTOR DE RESIDUOS Y RECICLAJE</div>                    
+        <div class="sidebar-brand-text mx-3">GESTOR DE RECICLAJE</div>                    
     </a>
 
     <!-- Divider -->
@@ -19,15 +19,15 @@
             <span>Dashboard</span></a>
     </li>
 
-    <!-- Divider -->
-    <hr class="sidebar-divider">
+    <!-- Divider 
+    <hr class="sidebar-divider">-->
 
-    <!-- Heading -->
+    <!-- Heading 
     <div class="sidebar-heading">
         Configuraciones
-    </div>
+    </div>-->
 
-    <!-- Nav Item - Pages Collapse Menu -->
+    <!-- Nav Item - Pages Collapse Menu 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
            aria-expanded="true" aria-controls="collapseTwo">
@@ -41,9 +41,9 @@
                 <a class="collapse-item" href="UsuarioController?accion=limite">Limites mensuales</a>
             </div>
         </div>
-    </li>
+    </li>-->
 
-    <!-- Nav Item - Utilities Collapse Menu -->
+    <!-- Nav Item - Utilities Collapse Menu
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities"
            aria-expanded="true" aria-controls="collapseUtilities">
@@ -62,7 +62,7 @@
                 <a class="collapse-item" href="UsuarioController?accion=usuario">Usuario</a>
             </div>
         </div>
-    </li>
+    </li> -->
 
     <!-- Divider -->
     <hr class="sidebar-divider">
@@ -88,7 +88,7 @@
         </div>
     </li>
 
-    <!-- Nav Item - Tables -->
+    <!-- Nav Item - Tables 
     <li class="nav-item">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTables"
            aria-expanded="true" aria-controls="collapseTables">
@@ -102,7 +102,7 @@
                 <a class="collapse-item" href="UsuarioController?accion=reportes2">Reportes</a>                
             </div>
         </div>
-    </li>
+    </li>-->
 
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block">
