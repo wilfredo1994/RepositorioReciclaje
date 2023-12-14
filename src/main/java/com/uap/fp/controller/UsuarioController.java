@@ -116,9 +116,9 @@ public class UsuarioController extends HttpServlet {
         List<TipoReciclaje> recicla = new ArrayList<>();
 
         // Llenar la lista con datos dummy
-        recicla.add(new TipoReciclaje(1,"Plastico", 500));
-        recicla.add(new TipoReciclaje(2,"Papel", 250));
-        recicla.add(new TipoReciclaje(3,"Vidrio", 120));
+//        recicla.add(new TipoReciclaje(1,"Plastico", 500));
+//        recicla.add(new TipoReciclaje(2,"Papel", 250));
+//        recicla.add(new TipoReciclaje(3,"Vidrio", 120));
         
         return recicla;
     }

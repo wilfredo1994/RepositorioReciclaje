@@ -12,15 +12,25 @@ public class TipoReciclaje {
     private int idTipo;
     private String Nombre;
     private int Cantidad;
-
-    public TipoReciclaje(int idTipo, String Nombre, int Cantidad) {
-        this.idTipo = idTipo;
-        this.Nombre = Nombre;
-        this.Cantidad = Cantidad;
-    }
+    private double monto;
 
     public TipoReciclaje() {
     }
+
+    public TipoReciclaje(int idTipo, String Nombre, int Cantidad, double monto) {
+        this.idTipo = idTipo;
+        this.Nombre = Nombre;
+        this.Cantidad = Cantidad;
+        this.monto = monto;
+    }
+
+    public double getMonto() {
+        return monto;
+    }
+
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }    
 
     public int getIdTipo() {
         return idTipo;

@@ -147,7 +147,8 @@ public class ReciclajeController extends HttpServlet {
                 String fechaFin = request.getParameter("dtpFechaFin");                
                 List<Reciclaje> listaRecb = recdaob.buscarListaReporte(tipoReciclaje, formatearFecha(fechaInicio), formatearFecha(fechaFin));
                 request.setAttribute("datosLista", listaRecb);
-                request.getRequestDispatcher("views/Reciclaje/reportes.jsp").forward(request, response);
+                request.getRequestDispatcher("views/Reciclaje/reportes.jsp#").forward(request, response);
+                //request.getRequestDispatcher("views/Reciclaje/reportes.jsp").forward(request, response);
                 break;
             case "Exportar":
                 ReciclajeDAO recdaoex = new ReciclajeDAO();

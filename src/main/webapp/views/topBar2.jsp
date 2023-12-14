@@ -46,7 +46,7 @@
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                  aria-labelledby="userDropdown">
-                              
+                                                 
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
@@ -54,9 +54,7 @@
                 </a>
             </div>
         </li>
-
     </ul>
-
 </nav>
 
 <!-- Logout Modal-->
@@ -78,3 +76,11 @@
         </div>
     </div>
 </div>
+
+<script src="content/vendor/jquery/jquery.min.js"></script>
+<script src="content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="content/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="content/js/sb-admin-2.min.js"></script>    
+<script src="content/vendor/chart.js/Chart.min.js"></script>    
+<script src="content/js/demo/chart-area-demo.js"></script>
+<script src="content/js/demo/chart-pie-demo.js"></script>
