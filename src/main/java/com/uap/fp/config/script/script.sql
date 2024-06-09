@@ -1,3 +1,4 @@
+
 alter session set "_ORACLE_SCRIPT"=true;
 -- USER SQL
 CREATE USER "BDGESTION" IDENTIFIED BY "oracle123"  ;
